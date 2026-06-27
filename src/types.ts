@@ -77,8 +77,6 @@ export interface GaugeConfig {
  * Resolved configuration — all fields have concrete values after defaults are applied.
  */
 export interface ResolvedGaugeConfig {
-  /** Lovelace card type — required by HA's handleAction. */
-  type: string;
   entity: string;
   min: number;
   max: number;

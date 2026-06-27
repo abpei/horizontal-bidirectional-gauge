@@ -7,7 +7,7 @@
  */
 import { LitElement, html, css, nothing } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import type { GaugeConfig, ResolvedGaugeConfig, HassEntity } from "./types.js";
+import type { GaugeConfig, ResolvedGaugeConfig, HassEntity, HomeAssistant } from "./types.js";
 declare global {
   interface Window {
     customCards?: Array<{ type: string; name: string; description: string }>;
@@ -228,12 +228,12 @@ export class HorizontalBidirectionalGauge extends LitElement {
   /* ── LitElement properties ──────────────────────────────────────── */
 
   /** Internal storage for hass — setter triggers re-render. */
-  private _hass!: { states: Record<string, HassEntity> };
+  private _hass!: HomeAssistant;
 
   /** Home Assistant object injected by Lovelace on every update.
    *  Custom setter ensures LitElement re-renders even when HA
    *  mutates the same object reference in place. */
-  set hass(value: { states: Record<string, HassEntity> }) {
+  set hass(value: HomeAssistant) {
     this._hass = value;
     this.requestUpdate();
   }
