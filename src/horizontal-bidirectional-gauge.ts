@@ -345,6 +345,7 @@ export class HorizontalBidirectionalGauge extends LitElement {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      font-weight: bold;
       margin: 0;
     }
     .title-row__value {
@@ -355,6 +356,7 @@ export class HorizontalBidirectionalGauge extends LitElement {
       font-weight: 500;
       color: var(--primary-text-color);
       white-space: nowrap;
+      font-weight: bold;
       margin-left: 8px;
     }
     .title-row__icon {
@@ -416,6 +418,7 @@ export class HorizontalBidirectionalGauge extends LitElement {
       overflow: hidden;
       border-radius: inherit;
       white-space: nowrap;
+      font-weight: bold;
       letter-spacing: 0.15em;
       font-size: 13px;
       color: rgba(255, 255, 255, 0.5);
@@ -449,6 +452,7 @@ export class HorizontalBidirectionalGauge extends LitElement {
       font-size: 11px;
       color: var(--secondary-text-color);
       white-space: nowrap;
+      font-weight: bold;
       min-width: 40px;
     }
     .bar-label--negative {
@@ -595,7 +599,7 @@ export class HorizontalBidirectionalGauge extends LitElement {
                 style="left: ${zeroPosition - negativeFill}%; width: ${negativeFill}%; background: ${cfg.negative_color};"
               >
                 <div class="flow-arrows flow-arrows--left ${cfg.animation ? "flow-arrows--animated" : ""}">
-                  ${"\u25C0 ".repeat(40)}
+                  ${"\u003C ".repeat(40)}
                 </div>
               </div>`
             : nothing}
@@ -605,7 +609,7 @@ export class HorizontalBidirectionalGauge extends LitElement {
                 style="left: ${zeroPosition}%; width: ${positiveFill}%; background: ${cfg.positive_color};"
               >
                 <div class="flow-arrows flow-arrows--right ${cfg.animation ? "flow-arrows--animated" : ""}">
-                  ${" \u25B6".repeat(40)}
+                  ${" \u003E".repeat(40)}
                 </div>
               </div>`
             : nothing}
